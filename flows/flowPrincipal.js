@@ -2,7 +2,7 @@ const { addKeyword, EVENTS } = require("@bot-whatsapp/bot");
 
 const flowPrincipal = addKeyword(EVENTS.WELCOME)
   .addAnswer(
-    "Bivenido a *Móvil Tech*",
+    "Bivenido a *¡Adquiere tu casa ya!*",
     "Reparacion de celulares iPhone y otras marcas"
   )
   .addAnswer(
