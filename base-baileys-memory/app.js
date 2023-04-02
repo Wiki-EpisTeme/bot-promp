@@ -1,70 +1,79 @@
-const { createBot, createProvider, createFlow, addKeyword } = require('@bot-whatsapp/bot')
+const {
+    createBot,
+    createProvider,
+    createFlow,
+    addKeyword,
+} = require('@bot-whatsapp/bot')
 
 const QRPortalWeb = require('@bot-whatsapp/portal')
 const BaileysProvider = require('@bot-whatsapp/provider/baileys')
 const MockAdapter = require('@bot-whatsapp/database/mock')
+const delay = (ms) => new Promise((res) => setTimeout(res, ms))
 
-const flowSecundario = addKeyword(['2', 'siguiente']).addAnswer(['📄 Aquí tenemos el flujo secundario'])
-
-const flowDocs = addKeyword(['doc', 'documentacion', 'documentación']).addAnswer(
-    [
-        '📄 Aquí encontras las documentación recuerda que puedes mejorarla',
-        'https://bot-whatsapp.netlify.app/',
-        '\n*2* Para siguiente paso.',
-    ],
-    null,
-    null,
-    [flowSecundario]
-)
-
-const flowTuto = addKeyword(['tutorial', 'tuto']).addAnswer(
-    [
-        '🙌 Aquí encontras un ejemplo rapido',
-        'https://bot-whatsapp.netlify.app/docs/example/',
-        '\n*2* Para siguiente paso.',
-    ],
-    null,
-    null,
-    [flowSecundario]
-)
-
-const flowGracias = addKeyword(['gracias', 'grac','esta bien','Gracias','g','gr']).addAnswer(
-    [
-        '🚀 Puedes aportar tu granito de arena a este proyecto',
-        '[*opencollective*] https://opencollective.com/bot-whatsapp',
-        '[*buymeacoffee*] https://www.buymeacoffee.com/leifermendez',
-        '[*patreon*] https://www.patreon.com/leifermendez',
-        '\n*2* Para siguiente paso.',
-    ],
-    null,
-    null,
-    [flowSecundario]
-)
-
-const flowDiscord = addKeyword(['discord']).addAnswer(
-    ['🤪 Únete al discord', 'https://link.codigoencasa.com/DISCORD', '\n*2* Para siguiente paso.'],
-    null,
-    null,
-    [flowSecundario]
-)
-
-const flowPrincipal = addKeyword(['hola', 'ole', 'alo'])
-    .addAnswer("Bivenido a *¡Adquiere tu casa ya!*",)
+const flowAgente = addKeyword("Hablar con un asesor", { sensitive: true })
     .addAnswer(
-        [
-            'Nuestra pagina Web *https://adquieretucasaya.com.co/*',
-            'Articulos de interes *link de interes*',
-            'Para una asesoria con un asesor escriba *AGENTE*'
-            
-        ],
-        null,
-        null,
-        [flowDocs, flowGracias, flowTuto, flowDiscord]
+        "Estamos desviando tu conversacion a nuestro agente"
     )
+    .addAction(async (ctx, { provider }) => {
+        const nanoid = await import('nanoid')
+        const ID_GROUP = nanoid.nanoid(5)
+        const refProvider = await provider.getInstance()
+        await refProvider.groupCreate(`Media Tech Support (${ID_GROUP})`, [
+            `${ctx.from}@s.whatsapp.net`
+        ])
+    })
+    .addAnswer('Te hemos agregado a un grupo con un asesor! Gracias')
+
+module.exports = flowAgente;
+
+const flujosInformacion = addKeyword([1])
+    .addAnswer('En este texto te doy informacion sobre el chatbot-3.0',
+
+        {
+            buttons: [
+                {
+                    body: 'Casa 1'
+                },
+                {
+                    body: 'Casa 2'
+                },
+                {
+                    body: 'casa 3'
+                },
+                {
+                    body: 'Edificos'
+                },
+                {
+                    body: 'Locales'
+                },
+                {
+                    body: 'Almacenes'
+                }
+            ]
+        }
+    )
+    .addAnswer('Hablar con un asesor',
+        [
+            flowAgente
+        ])
+
+
+const flujosDocumentacion = addKeyword([2])
+    .addAnswer('En este texto te doy documentacion sobre el chatbot-3.0')
+
+const conversacionPrincipal = addKeyword(['chatbot-3.0', 'hola', 'h'])
+    .addAnswer('Bienvenido a Yinketing')
+    .addAnswer(
+        '*1.* para mas informacion',
+        '*2.* para leer la documentacion',
+        null,
+        [flujosDocumentacion, flujosInformacion]
+    )
+
 
 const main = async () => {
     const adapterDB = new MockAdapter()
-    const adapterFlow = createFlow([flowPrincipal])
+    const adapterFlow = createFlow([conversacionPrincipal])
     const adapterProvider = createProvider(BaileysProvider)
 
     createBot({

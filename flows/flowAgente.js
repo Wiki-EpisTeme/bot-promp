@@ -3,7 +3,7 @@ const { addKeyword } = require("@bot-whatsapp/bot");
 /**
  * Esto se ejeuta cunado la persona escruibe "AGENTE"
  */
-const flowAgente = addKeyword("AGENTE", { sensitive: true })
+const flowAgente = addKeyword("Hablar con un asesor", { sensitive: true })
   .addAnswer(
    "Estamos desviando tu conversacion a nuestro agente"
   )
