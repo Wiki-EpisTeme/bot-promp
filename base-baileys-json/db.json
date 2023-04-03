@@ -1,15 +1,15 @@
 [
   {
-    "ref": "285c762c-0942-487a-bfbf-d7e630511b79",
-    "keyword": "9ad73c2540a79c2811a004dd315dbcce",
+    "ref": "6ebef151-ac0a-447f-a20f-9761b76d8719",
+    "keyword": "28ea397f403ef3e6d804e87a4c6275e5",
     "answer": "hola",
     "options": {},
     "from": "573143644652",
     "refSerialize": "79e7fc16f7fb85373fd25a99390f44c0"
   },
   {
-    "ref": "ans_880c7b8a-ca7e-42b0-9505-46d34a700ca1",
-    "keyword": "key_efd46e3d-2bf3-4df7-ab38-1551ea00a1b6",
+    "ref": "ans_a0ea0fe0-868b-4145-8b3f-4b0338c01f28",
+    "keyword": "key_c6649705-0833-4b43-9631-da231579efff",
     "answer": "🙌 Hola bienvenido a este *Chatbot*",
     "options": {
       "media": null,
@@ -21,12 +21,12 @@
       "keyword": {},
       "callback": false
     },
-    "refSerialize": "abf0ba9decaf3b403f1090aad7594d2e",
+    "refSerialize": "1c8e4df302c6c9899db4c52c3387314c",
     "from": "573143644652"
   },
   {
-    "ref": "ans_f86995b4-b2ef-48fe-a1b9-0f2888d1b721",
-    "keyword": "ans_880c7b8a-ca7e-42b0-9505-46d34a700ca1",
+    "ref": "ans_6c3782c7-358e-4e95-92f7-fd43ad0e7cc8",
+    "keyword": "ans_a0ea0fe0-868b-4145-8b3f-4b0338c01f28",
     "answer": "te comparto los siguientes links de interes sobre el proyecto\n👉 *Hablar con un asesor*\n👉 *OFERTAS*",
     "options": {
       "media": null,
@@ -38,23 +38,81 @@
       "keyword": {},
       "callback": false
     },
-    "refSerialize": "dda7495a17cd0515a0f47ff69626031a",
+    "refSerialize": "8810e39cd3ef0c662acd0b10b41f1e33",
     "from": "573143644652"
   },
   {
-    "ref": "7d0339c6-1f8d-42a6-9252-0dbc82fa9dec",
-    "keyword": "dda7495a17cd0515a0f47ff69626031a",
+    "ref": "b7232015-ea19-4578-ad42-7aa79a8ee7df",
+    "keyword": "8810e39cd3ef0c662acd0b10b41f1e33",
+    "answer": "*OFERTAS*",
+    "options": {},
+    "from": "573143644652",
+    "refSerialize": "28ea397f403ef3e6d804e87a4c6275e5"
+  },
+  {
+    "ref": "b3274223-b74a-479f-aedd-0925711f8752",
+    "keyword": "28ea397f403ef3e6d804e87a4c6275e5",
     "answer": "*Hablar con un asesor*",
     "options": {},
     "from": "573143644652",
     "refSerialize": "f20e3eed59a731a65ed38a05caeb6877"
   },
   {
-    "ref": "65fb7321-ece1-44ce-beba-05b61a2539b3",
+    "ref": "f47eae06-1e4e-4469-9143-77168a946782",
     "keyword": "f20e3eed59a731a65ed38a05caeb6877",
-    "answer": "*OFERTAS*",
+    "answer": "hola",
     "options": {},
     "from": "573143644652",
-    "refSerialize": "28ea397f403ef3e6d804e87a4c6275e5"
+    "refSerialize": "79e7fc16f7fb85373fd25a99390f44c0"
+  },
+  {
+    "ref": "ans_a0ea0fe0-868b-4145-8b3f-4b0338c01f28",
+    "keyword": "key_c6649705-0833-4b43-9631-da231579efff",
+    "answer": "🙌 Hola bienvenido a este *Chatbot*",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "child": null,
+      "delay": 0,
+      "nested": [],
+      "keyword": {},
+      "callback": false
+    },
+    "refSerialize": "1c8e4df302c6c9899db4c52c3387314c",
+    "from": "573143644652"
+  },
+  {
+    "ref": "ans_6c3782c7-358e-4e95-92f7-fd43ad0e7cc8",
+    "keyword": "ans_a0ea0fe0-868b-4145-8b3f-4b0338c01f28",
+    "answer": "te comparto los siguientes links de interes sobre el proyecto\n👉 *Hablar con un asesor*\n👉 *OFERTAS*",
+    "options": {
+      "media": null,
+      "buttons": [],
+      "capture": false,
+      "child": null,
+      "delay": 0,
+      "nested": [],
+      "keyword": {},
+      "callback": false
+    },
+    "refSerialize": "8810e39cd3ef0c662acd0b10b41f1e33",
+    "from": "573143644652"
+  },
+  {
+    "ref": "7fe8b09b-d02a-46a3-b50f-871a280f2a20",
+    "keyword": "8810e39cd3ef0c662acd0b10b41f1e33",
+    "answer": "*Hablar con un asesor*",
+    "options": {},
+    "from": "573143644652",
+    "refSerialize": "f20e3eed59a731a65ed38a05caeb6877"
+  },
+  {
+    "ref": "9d7b5eb7-446b-486d-8a60-bde5d1a53b2e",
+    "keyword": "f20e3eed59a731a65ed38a05caeb6877",
+    "answer": "as",
+    "options": {},
+    "from": "573143644652",
+    "refSerialize": "5db5940f03aa4515944077d6bcf7b4a5"
   }
 ]
